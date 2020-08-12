@@ -17,10 +17,9 @@ public class Main {
         File file = new File("src\\main\\resources\\token.txt");
         Scanner scan = new Scanner(file);
         String token = scan.nextLine();
-        Bot bot = new Bot(BotConfiguration.builder().name("ava").path("src\\main\\resources").build());
-        Chat chatSession = new Chat(bot);
+
         builder.setToken(token);
-        builder.addEventListener(new Chatter(chatSession));
+        builder.addEventListener(new Chatter());
         builder.setGame(Game.playing("say hey ava!"));
         builder.buildAsync();
     }
