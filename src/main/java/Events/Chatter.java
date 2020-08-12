@@ -15,8 +15,9 @@ public class Chatter extends ListenerAdapter {
         if (event.getAuthor().isBot()) {
             return;
         }
-        if (event.getMessage().getContentRaw().startsWith("<3")) {
+        if (event.getMessage().getContentRaw().startsWith("!")) {
             String message = event.getMessage().getContentRaw();
+            message = message.substring(1);
             String reply = chatty.multisentenceRespond(message);
             event.getChannel().sendMessage(reply).queue();
         }
