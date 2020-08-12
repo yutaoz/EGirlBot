@@ -1,0 +1,8 @@
+<aiml>
+	<category>
+		<pattern>Hi</pattern>
+		<template>
+			hi
+		</template>
+	</category>
+</aiml>

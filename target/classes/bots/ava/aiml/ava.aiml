@@ -1,0 +1,12 @@
+<aiml>
+	<category>
+		<pattern>hey ava</pattern>
+		<template>
+			<random>
+				<li>heyy uwu</li>
+				<li>awwh hi there!</li>
+				<li>fck off twat</li>
+			</random>
+		</template>
+	</category>
+</aiml>
