@@ -20,7 +20,7 @@ public class Main {
 
         builder.setToken(token);
         builder.addEventListener(new Chatter());
-        builder.setGame(Game.playing("say hey ava!"));
+        builder.setGame(Game.playing("with your heart rn"));
         builder.buildAsync();
     }
 }

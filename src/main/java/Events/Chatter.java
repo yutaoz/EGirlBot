@@ -5,6 +5,10 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import org.alicebot.ab.Bot;
 import org.alicebot.ab.Chat;
 import org.alicebot.ab.configuration.BotConfiguration;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+
+import java.io.*;
 
 public class Chatter extends ListenerAdapter {
 
@@ -16,10 +20,9 @@ public class Chatter extends ListenerAdapter {
         if (event.getAuthor().isBot()) {
             return;
         }
-        if (event.getMessage().getContentRaw().startsWith("!")) {
-            String message = event.getMessage().getContentRaw().substring(1);
-            String reply = chatty.multisentenceRespond(message);
-            event.getChannel().sendMessage(reply).queue();
+        if (event.getMessage().getContentRaw().equals("!egirl")) {
+            event.getChannel().sendMessage("ayo stfu").queue();
+
         }
 
         event.getJDA().removeEventListener(this);
