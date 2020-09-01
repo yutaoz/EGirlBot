@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Main {
+public class WorkerProcess {
     public static void main(String[] args) throws FileNotFoundException, LoginException {
         JDABuilder builder = new JDABuilder(AccountType.BOT);
         File file = new File("src\\main\\resources\\token.txt");
