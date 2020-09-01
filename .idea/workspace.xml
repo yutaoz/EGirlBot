@@ -33,8 +33,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e1429ca-77a1-4c42-9456-157e09fccfee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WorkerProcess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WorkerProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WorkerProcess.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
