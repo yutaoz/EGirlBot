@@ -7,6 +7,7 @@ public class RawCommand {
         newString = command.replace("<", "");
         newString = newString.replace(">", "");
         newString = newString.replace("@", "");
+        newString = newString.replace("!", "");
         return newString;
     }
 }
