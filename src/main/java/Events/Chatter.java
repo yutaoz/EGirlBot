@@ -7,6 +7,7 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 
 import java.io.*;
+import java.net.URLEncoder;
 
 import static Events.AniLink.anilink;
 import static Events.RawCommand.rawify;
@@ -80,10 +81,58 @@ public class Chatter extends ListenerAdapter {
         dispatcher.register(
           literal("/opgg")
                   .then(
-                          argument("summoner", greedyString())
+                          argument("summoner", string())
+                                  .then(
+                                          argument("region", word())
+                                          .executes(c -> {
+                                              String region = getString(c, "region");
+                                              String smnr = getString(c, "summoner");
+                                              String url = "";
+
+                                              if (region.equalsIgnoreCase("na")) {
+                                                  try {
+                                                      url = "https://na.op.gg/summoner/userName=" + URLEncoder.encode(smnr, "UTF-8");
+                                                  } catch (UnsupportedEncodingException e) {
+                                                      e.printStackTrace();
+                                                  }
+                                                  event.getChannel().sendMessage(url).queue();
+                                              }
+                                              else if (region.equalsIgnoreCase("kr")) {
+                                                  try {
+                                                      url = "https://www.op.gg/summoner/userName=" + URLEncoder.encode(smnr, "UTF-8");
+                                                  } catch (UnsupportedEncodingException e) {
+                                                      e.printStackTrace();
+                                                  }
+                                                  event.getChannel().sendMessage(url).queue();
+                                              }
+                                              else if (region.equalsIgnoreCase("euw")) {
+                                                  try {
+                                                      url = "https://euw.op.gg/summoner/userName=" + URLEncoder.encode(smnr, "UTF-8");
+                                                  } catch (UnsupportedEncodingException e) {
+                                                      e.printStackTrace();
+                                                  }
+                                                  event.getChannel().sendMessage(url).queue();
+                                              }
+                                              else if (region.equalsIgnoreCase("eune")) {
+                                                  try {
+                                                      url = "https://eune.op.gg/summoner/userName=" + URLEncoder.encode(smnr, "UTF-8");
+                                                  } catch (UnsupportedEncodingException e) {
+                                                      e.printStackTrace();
+                                                  }
+                                                  event.getChannel().sendMessage(url).queue();
+                                              }
+                                              return 1;
+                                          })
+                                  )
                           .executes(c -> {
                               String smnr = getString(c, "summoner");
-                              event.getChannel().sendMessage("https://na.op.gg/summoner/userName=" + smnr).queue();
+                              String url = "";
+                              try {
+                                  url = "https://na.op.gg/summoner/userName=" + URLEncoder.encode(smnr, "UTF-8");
+                              } catch (UnsupportedEncodingException e) {
+                                  e.printStackTrace();
+                              }
+                              event.getChannel().sendMessage(url).queue();
                               return 1;
                           })
                   )
@@ -120,7 +169,7 @@ public class Chatter extends ListenerAdapter {
             if (event.getMessage().getContentRaw().startsWith("/"))
             dispatcher.execute(rawCmd, source);
         } catch (CommandSyntaxException e){
-            event.getChannel().sendMessage("Syntax error").queue();
+            event.getChannel().sendMessage("command doesnt exist idiot").queue();
         }
 
     }
