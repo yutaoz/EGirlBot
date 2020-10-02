@@ -15,7 +15,7 @@ public class WorkerProcess {
         //File file = new File("src/main/resources/token.txt");
         //Scanner scan = new Scanner(file);
         //String token = scan.nextLine();
-        String token = "NzQzMjA0OTI0NDQ3NTIyOTQ3.XzRRhg.cE0--sbLt1GU8YrMD2oSrI-Gq-Y";
+        String token = "token";
 
         builder.setToken(token);
         builder.addEventListener(new Chatter());
